@@ -3,6 +3,28 @@ using namespace std;
 // will use Node class to make object of own made data type
 #include "Node.cpp"
 
+void print(Node * head)  // since address therefore pointer
+{
+
+    // always create a temprory pointer to keep the address of head and use that only to travel throug linked list
+    // agr tum head ko nhi store krogye linkedlist toh print karlogye leking tum apna 1st node ka address gwa dogye therefore temp pointer mai head store karo and use that not the original one
+
+    Node *tempHead = head;
+
+    // jab tak head ky next(address of next node) is not equal tab tak linked list print hogi
+    while(tempHead -> next != NULL)
+    {
+
+        // to access the data in head node use arrow notation 
+        cout << tempHead -> data << " ";
+        // now print next node make it as your head now therefore put address of next node in your head since agli ka address already head node mai therefore head se hi usa next access karo using arrow notation
+
+        tempHead = tempHead -> next;
+
+    }
+
+}
+
 int main()
 {
     
@@ -34,6 +56,24 @@ int main()
     // Now we have to print the whole linked list using this head pointer
 
     cout << head -> data;  // arrow means go to the address place in head pointer and access the data value from that address Node
+
+
+
+
+    Node n3(3);
+    Node n4(4);
+    Node n5(5);
+
+    // each Node ky next mai agli wali node ka address hoga ie 2nd node ky next mai n3 ka address
+
+    n2.next = &n3;
+    n3.next = &n4;
+    n4.next = &n5;
+    // n4.next main automatically null chalgya jaisye para constructor ky pass gye hum
+
+    // make your own print function which will get one argument that is address of head node its data type is also Node since store address of the Node
+
+    print(head);
 
 
 }
