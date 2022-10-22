@@ -48,6 +48,8 @@ Node* getLinkedList()
 
 }
 
+// The above function have timeComplexity in Order of n to insert n Nodes : O(n)
+
 void print(Node* head)
 {
 
