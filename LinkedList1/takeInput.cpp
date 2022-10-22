@@ -72,6 +72,12 @@ Node* takeInput()
 
 }
 
+
+
+// The above Function has a Time Complexity of O(N^2) since two while loops which is not good 
+// We can avoid inner While loop if we know the tail of the LinkedList so we dont have to traverse over the linkedList in every case since we know the tail so we can direeclty connect the tail of the LinkedList to the newNode;
+// Better version of this code is Written in takeInput_better.cpp
+
 void print(Node *head)
 {
 
@@ -97,5 +103,6 @@ int main()
     Node *head = takeInput();
 
     print(head);
+
 
 }
